@@ -4,7 +4,7 @@ import { categories } from '../data/categories';
 
 const Sidebar = () => {
   return (
-    <div className="bg-gray-800 w-64 h-screen p-6 fixed top-0 left-0 border-r border-gray-700">
+    <div className="bg-gray-800 w-64 min-h-screen p-6 fixed top-0 left-0 border-r border-gray-700">
       <h2 className="text-white text-2xl font-bold mb-8">E-commerce UI</h2>
       <nav>
         <ul className="space-y-4">

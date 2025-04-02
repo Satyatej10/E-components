@@ -7,7 +7,7 @@ import Components from './pages/Components';
 function App() {
   return (
     <Router>
-      <div className="flex">
+      <div className="flex bg-gray-900 text-white min-h-screen">
         <Sidebar />
         <div className="flex-1">
           <Routes>
