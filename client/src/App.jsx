@@ -1,14 +1,21 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import Components from "./pages/Components";
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Sidebar from './components/Sidebar';
+import Home from './pages/Home';
+import Components from './pages/Components';
 
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/components" element={<Components />} />
-      </Routes>
+      <div className="flex">
+        <Sidebar />
+        <div className="flex-1">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/components" element={<Components />} />
+          </Routes>
+        </div>
+      </div>
     </Router>
   );
 }

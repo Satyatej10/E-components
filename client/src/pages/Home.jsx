@@ -1,20 +1,18 @@
-import { useNavigate } from "react-router-dom";
+import React from 'react';
 
 const Home = () => {
-  const navigate = useNavigate();
-
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen text-center">
-      <h1 className="text-4xl font-bold mb-4">Welcome to E-commerce UI Library</h1>
-      <p className="text-lg mb-6">
-        Browse and use high-quality eCommerce components for your projects.
+    <div className="ml-64 p-8 bg-gray-900 min-h-screen flex flex-col justify-center items-center">
+      <h1 className="text-white text-5xl font-bold mb-4">Welcome to E-commerce UI Hub</h1>
+      <p className="text-gray-300 text-lg mb-8 text-center max-w-2xl">
+        Explore a collection of beautifully designed e-commerce components. Preview them live and grab the source code to kickstart your project!
       </p>
-      <button
-        onClick={() => navigate("/components")}
-        className="bg-blue-600 text-white px-6 py-3 rounded text-lg"
+      <a
+        href="/components"
+        className="bg-indigo-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-indigo-700 transition-colors"
       >
         Explore Components
-      </button>
+      </a>
     </div>
   );
 };
