@@ -127,22 +127,37 @@ const Components = () => {
                 ) : (
                   <div>
                     <h3 className="text-gray-300 text-lg font-medium mb-2">Source Code:</h3>
-                    <Highlight {...defaultProps} theme={theme} code={selectedComponent.code} language="jsx">
-                      {({ className, style, tokens, getLineProps, getTokenProps }) => (
-                        <pre
-                          className={`${className} p-6 rounded-lg border border-gray-800 overflow-x-auto`}
-                          style={{ ...style, backgroundColor: '#1a1a1a' }}
-                        >
-                          {tokens.map((line, i) => (
-                            <div {...getLineProps({ line, key: i })}>
-                              {line.map((token, key) => (
-                                <span {...getTokenProps({ token, key })} />
-                              ))}
-                            </div>
-                          ))}
-                        </pre>
-                      )}
-                    </Highlight>
+                    <div className="bg-gray-900 rounded-lg border border-gray-800 overflow-hidden">
+                      <Highlight {...defaultProps} theme={theme} code={selectedComponent.code} language="jsx">
+                        {({ className, style, tokens, getLineProps, getTokenProps }) => (
+                          <div
+                            className={`${className} p-4 text-sm`}
+                            style={{
+                              ...style,
+                              backgroundColor: '#1e1e1e',
+                              fontFamily: "'Fira Code', 'Courier New', monospace",
+                              lineHeight: '1.5',
+                            }}
+                          >
+                            {tokens.map((line, i) => (
+                              <div
+                                {...getLineProps({ line, key: i })}
+                                className="flex"
+                              >
+                                <span className="w-8 text-gray-500 text-right pr-4 select-none">
+                                  {i + 1}
+                                </span>
+                                <span>
+                                  {line.map((token, key) => (
+                                    <span {...getTokenProps({ token, key })} />
+                                  ))}
+                                </span>
+                              </div>
+                            ))}
+                          </div>
+                        )}
+                      </Highlight>
+                    </div>
                   </div>
                 )}
               </LiveProvider>
